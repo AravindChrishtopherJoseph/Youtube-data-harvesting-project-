@@ -12,10 +12,13 @@ The problem statement is to create a Streamlit application that allows users to 
 Ability to search and retrieve data from the SQL database using different search options, including joining tables to get channel details.
 
 **Technology Stack Used**
-Python 
-MongoDB
-PostgreSQL
-Streamlit 
+1) Python
+   
+2) MongoDB
+   
+3) PostgreSQL
+   
+4) Streamlit 
 
 **Approach**
 **Set up a Streamlit app:** Streamlit is a great choice for building data visualization and analysis tools quickly and easily. You can use Streamlit to create a simple UI where users can enter a YouTube channel ID, view the channel details, and select channels to migrate to the data warehouse.
