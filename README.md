@@ -1,6 +1,7 @@
 **YouTube-Data-Harvesting-and-Warehousing-using-SQL-MongoDB-and-Streamlit**
 
 **Problem Statement:**
+
 The problem statement is to create a Streamlit application that allows users to access and analyze data from multiple YouTube channels.
 
 **The application should have the following features:**
@@ -21,6 +22,7 @@ Ability to search and retrieve data from the SQL database using different search
 4) Streamlit 
 
 **Approach**
+
 **Set up a Streamlit app:** Streamlit is a great choice for building data visualization and analysis tools quickly and easily. You can use Streamlit to create a simple UI where users can enter a YouTube channel ID, view the channel details, and select channels to migrate to the data warehouse.
 Connect to the YouTube API: You'll need to use the YouTube API to retrieve channel and video data. You can use the Google API client library for Python to make requests to the API.
 
