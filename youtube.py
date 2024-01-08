@@ -487,19 +487,28 @@ def show_comments_table():
 
 #streamlit function
 
+st.header(":green[_YOUTUBE DATA HARVESTING AND WAREHOUSING_]:point_down:")
+
+st.markdown("This approach involves building a simple UI with Streamlit, retrieving data from the YouTube API, storing it in a MongoDB data lake, migrating it to a SQL data warehouse, querying the data warehouse with SQL, and displaying the data in the Streamlit app.")
+
+
 with st.sidebar:
-    st.title(":blue[YOUTUBE DATA HARVESTING AND WAREHOUSING USING MONGODB,MYSQL AND STREAMLIT]")
-    st.header("SKILLS TAKE AWAY FROM THIS PROJECT")
-    st.caption("Python Scripting")
-    st.caption("Data Collection")
-    st.caption("MongoDB")
-    st.caption("Streamlit")
-    st.caption("API Integeration")
-    st.caption("Data Management using MongoDB and SQL")
+    
+    st.header(":red[_SKILLS TAKE AWAY FROM THIS PROJECT_]")
+    st.text("How to integrate API information to the VS code?")
+    st.text("How to write codes by using python scripts?")
+    st.text("How to collect the datas by using channel ID?")
+    st.text("How to transfer the data to MongoDB?")
+    st.text("How to manage the data using MongoDB and SQL?")
+    st.text("How to show the results in Streamlit app?")
 
-channel_id=st.text_input("Enter the Channel ID")
+    d = st.date_input(":red[DATE]", dt.date(2024,1,7))
+    st.write("Date is:",d)
+    
 
-if st.button("collect and store data"):
+channel_id=st.text_input(":red[**CHANNEL ID**]:white_check_mark:")
+
+if st.button(":red[**COLLECT AND STORE THE DATA**]"):
         ch_ids=[]
         db=client["Youtube_data"]
         coll1=db["channel_details"]
@@ -511,24 +520,25 @@ if st.button("collect and store data"):
             insert=channel_details(channel_id)
             st.success(insert)
 
-if st.button("Migrate to sql"):
+if st.button(":red[**MIGRATE TO SQL**]"):
      Table=tables()
      st.success(Table)
 
-show_table=st.radio("SELECT THE TABLE FOR VIEW",("CHANNELS","PLAYLISTS","VIDEOS","COMMENTS"))
 
-if show_table=="CHANNELS":
-     show_channels_table()
+show_table=st.radio(":red[SELECT THE TABLE]:white_check_mark:",("LIST OF CHANNELS","LIST OF PLAYLISTS","LIST OF VIDEOS","LIST OF COMMENTS"))
 
-elif show_table=="PLAYLISTS":
+if show_table=="LIST OF CHANNELS":
+  show_channels_table()
+
+elif show_table=="LIST OF PLAYLISTS":
      show_playlists_table()
 
-elif show_table=="VIDEOS":
+elif show_table=="LIST OF VIDEOS":
      show_videos_table()
 
-elif show_table=="COMMENTS":
+elif show_table=="LIST OF COMMENTS":
      show_comments_table()
-
+  
 #SQL Connection
 
 mydb=psycopg2.connect(host="localhost",
